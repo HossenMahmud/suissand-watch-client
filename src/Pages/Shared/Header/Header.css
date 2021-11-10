@@ -1,0 +1,24 @@
+.header-bg{
+    background-color:black;
+}
+.logoutBtn{
+    background-color:white;
+    border: 1px solid red;
+    padding: 3px 6px;
+    color:black;
+    margin: 3px 10px;
+    border-radius: 5px;
+}
+.header-logo{
+   text-align: start;
+}
+.header-logo img{
+   width: 50%;
+}
+.navbar-nav a{
+    font-size: 18px;
+    font-weight: 600;
+}
+.navbar-toggler-icon{
+    background-color: white;
+}

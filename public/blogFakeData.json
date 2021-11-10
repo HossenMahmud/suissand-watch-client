@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "author": "James born",
+        "date": "5 Sept 2021",
+        "title": "In Focus: Romain Gauthier Logical One ",
+        "img": "https://i.ibb.co/6mQzzjC/blog-01.webp"
+    },
+    {
+        "id": 2,
+        "author": "James born",
+        "date": "10 Oct 2021",
+        "title": "Best Fashion Smartwatch Collection",
+        "img": "https://i.ibb.co/HxLdnDY/blog-02.webp"
+    },
+    {
+        "id": 3,
+        "author": "James born",
+        "date": "15 Jul 2021",
+        "title": "Blackshine Smartwatch Collection",
+        "img": "https://i.ibb.co/CBwpqMd/blog-03.webp"
+    }
+]

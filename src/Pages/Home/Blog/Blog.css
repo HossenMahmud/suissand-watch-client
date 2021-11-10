@@ -1,0 +1,38 @@
+.blog-bg{
+    background-color: black;
+}
+.blog-title h1{
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    padding-bottom: 50px;
+    font-family: fantasy;
+}
+
+.blog-item{
+    background-color: white;
+    box-shadow: rgba(238, 238, 248, 0.2) 0px 7px 29px 0px;
+    border-radius: 15px;
+    transition: all linear .5s;
+    border:3px solid black;
+}
+.blog-item:hover{
+    border:3px solid #D3A300;
+}
+.blog-item img{
+    border-radius: 15px 15px 0px 0px;
+}
+.blog-item-info{
+    padding: 20px;
+}
+.author-name{
+    font-weight: bold;
+    font-size: 18px;
+}
+.subscibe-content{
+    margin-bottom:30px;
+    color: #D3A300;
+}
+.subscribe-part{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.425);
+}

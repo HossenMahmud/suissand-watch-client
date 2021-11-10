@@ -1,0 +1,32 @@
+.watch-item{
+    box-shadow: rgba(228, 225, 225, 0.25) 0px 54px 55px, rgba(233, 230, 230, 0.12) 0px -12px 30px, rgba(248, 247, 247, 0.12) 0px 4px 6px, rgba(250, 230, 230, 0.17) 0px 12px 13px, rgba(248, 245, 245, 0.09) 0px -3px 5px;
+}
+.watch-bg{
+    background-color: black;
+}
+.watch-title h1{
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    padding-bottom: 50px;
+    font-family: fantasy;
+}
+.watch-btn{
+    background-color: #D3A300;
+    padding: 5px 8px;
+    border:1px solid #D3A300;
+    color:black;
+    font-size: 16px;
+    font-weight: bold;
+}
+.watch-info{
+    padding: 15px;
+}
+.watch-more-button{
+    background-color: #fff;
+    padding: 5px 8px;
+    border:1px solid #fff;
+    color:black;
+    font-size: 16px;
+    font-weight: bold;
+}

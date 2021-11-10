@@ -1,0 +1,13 @@
+.review-bg{
+    background-color: black;
+}
+.review-title h1{
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    padding-bottom: 50px;
+    font-family: fantasy;
+}
+.review-name{
+    color: #D3A300;
+}

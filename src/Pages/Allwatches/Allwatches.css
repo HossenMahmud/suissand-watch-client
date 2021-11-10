@@ -1,0 +1,10 @@
+.allwatches-bg-img{
+    background-image: url(../../images/watchBanner.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding:180px 0px;
+}
+.watches-banner-title h3{
+    font-family: fantasy;
+}
