@@ -16,7 +16,7 @@ const Watches = () => {
                 </div>
                 <div className="row">
                     {
-                        watches.slice(0, 6).map(watch => <div className="col-lg-4 mb-4">
+                        watches.slice(0, 6).map(watch => <div key={watch.id} className="col-lg-4 mb-4">
                             <div className="watch-item text-white text-start">
                                 <img className='img-fluid' src={watch.image} alt="" />
                                 <div className="watch-info py-3">

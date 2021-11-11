@@ -33,9 +33,9 @@ const Blog = () => {
                         <h4 className='subscibe-content'>Newsletter Now</h4>
                     </div>
                     <div className="col-lg-6">
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Yours Email Address" aria-label="Recipient's username" aria-describedby="button-addon2" />
-                            <button class="btn btn-outline-warning" type="button" id="button-addon2">Subscribe</button>
+                        <div className="input-group mb-3">
+                            <input type="text" className="form-control" placeholder="Yours Email Address" aria-label="Recipient's username" aria-describedby="button-addon2" />
+                            <button className="btn btn-outline-warning" type="button" id="button-addon2">Subscribe</button>
                         </div>
                     </div>
                 </div>

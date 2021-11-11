@@ -22,3 +22,8 @@
 .navbar-toggler-icon{
     background-color: white;
 }
+.logoutBtn{
+    background-color:transparent;
+    color: white;
+    border:1px solid #FFCA2C
+}

@@ -1,9 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
+// import useAuth from '../../../Hooks/useAuth';
+//import useFirebase from '../../../Hooks/useFirebase';
 import logo from '../../../images/logo.png'
 import './Header.css'
 
 const Header = () => {
+    //const { user, logOUt } = useFirebase();
+    const { user, logOUt } = useAuth();
     return (
         <div className='header-bg'>
             <div className="container">
@@ -22,6 +27,12 @@ const Header = () => {
                             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                                 <Link to="/home" className="nav-link text-white">Home</Link>
                                 <Link to="/watches" className="nav-link text-white">Watches</Link>
+                                <p className='text-white'>{user?.displayName}</p>
+                                {
+                                    user?.email ? <button onClick={logOUt} className='logoutBtn'>Logout</button>
+                                        :
+                                        <Link to="/login" className="nav-link text-white">Login</Link>
+                                }
                             </ul>
                         </div>
                     </div>

@@ -1,0 +1,13 @@
+.register-bg{
+    background-color: black;
+}
+.register-form{
+    padding-top:100px;
+}
+
+@media only screen and (max-width:991px) {
+    .register-form{
+        padding-top:0px;
+    }
+    
+}
