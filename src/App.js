@@ -6,21 +6,19 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import Header from './Pages/Shared/Header/Header';
-import Footer from './Pages/Shared/Footer/Footer';
 import Allwatches from './Pages/Allwatches/Allwatches';
 import Purchase from './Pages/Purchase/Purchase';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 
 function App() {
   return (
     <div className="App">
       <AuthProvider>
         <Router>
-          <Header></Header>
           <Switch>
             <Route exact path="/">
               <Home></Home>
@@ -37,11 +35,13 @@ function App() {
             <Route path='/login'>
               <Login></Login>
             </Route>
+            <PrivateRoute path='/dashboard'>
+              <Dashboard></Dashboard>
+            </PrivateRoute>
             <Route path='/register'>
               <Register></Register>
             </Route>
           </Switch>
-          <Footer></Footer>
         </Router>
       </AuthProvider>
     </div >

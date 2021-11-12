@@ -1,0 +1,14 @@
+.paymant-bg{
+    background-color: black;
+}
+.paymant h2{
+    font-family: fantasy;
+    font-weight: bold;
+    color: #D3A300;
+}
+
+@media only screen and (max-width:767px) {
+    .paymant h2{
+       font-size: 20px;
+    }
+}

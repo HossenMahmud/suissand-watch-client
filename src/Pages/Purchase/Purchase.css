@@ -1,6 +1,32 @@
 .purchase-info{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 75px 10px;
+}
+.purchase-info h2{
+    color: #D3A300;
+    font-weight: bold;
+}
+.purchase-info h3{
+    color: #D3A300;
+    font-weight: bold;
+    font-family: fantasy;
+}
+.purchase-info p{
+    color: #222;
+    font-family:serif;
+    font-size: 16px;
 }
 .purchase-img{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.purchase-img img{
+    height:470px;
+}
+.purchase-form{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 22px 10px;
+}
+.purchase-form h3{
+    font-family: fantasy;
+    font-weight: bold;
 }

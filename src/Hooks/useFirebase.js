@@ -1,6 +1,5 @@
 import { getAuth, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
-//import { useState } from "react";
 import initializeAuthentication from "../Firebase/firebase.init";
 initializeAuthentication();
 const useFirebase = () => {
@@ -8,6 +7,8 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [admin, setAdmin] = useState(false);
+
 
     // Register Email and Password
     const registerUser = (email, password, name, history) => {
@@ -17,6 +18,9 @@ const useFirebase = () => {
                 setError('');
                 const newUser = { email, displayName: name };
                 setUser(newUser);
+                // save user to the database
+                saveUser(email, name, 'POST');
+                // send name to firebase after creation
                 updateProfile(auth.currentUser, {
                     displayName: name,
                 })
@@ -32,6 +36,8 @@ const useFirebase = () => {
             })
             .finally(() => setIsLoading(false));
     }
+
+
     // Login with Email and Password
     const loginUser = (email, password, location, history) => {
         signInWithEmailAndPassword(auth, email, password)
@@ -64,8 +70,29 @@ const useFirebase = () => {
         })
     }
 
+    const saveUser = (email, displayName, method) => {
+        const user = { email, displayName };
+        fetch('http://localhost:5000/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+    };
+
+    // Check user is Admin
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/${user?.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+
+    }, [user.email])
+
+
     return {
-        registerUser, user, loginUser, logOUt, error, isLoading
+        registerUser, user, loginUser, logOUt, error, isLoading, admin
     }
 }
 export default useFirebase;
