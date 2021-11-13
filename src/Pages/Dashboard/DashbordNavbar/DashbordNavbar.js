@@ -26,9 +26,6 @@ const DashbordNavbar = () => {
                                 <Link to='/home'>
                                     Home
                                 </Link>
-                                <Link to={`${url}`}>
-                                    Dashboard
-                                </Link>
                                 {
                                     admin ? (
                                         <>
@@ -43,6 +40,9 @@ const DashbordNavbar = () => {
                                             </Link>
                                             <Link to={`${url}/manageproducts`}>
                                                 ManageProducts
+                                            </Link>
+                                            <Link to={`${url}/allReviews`}>
+                                                AllReviews
                                             </Link>
                                         </>
                                     ) : <>

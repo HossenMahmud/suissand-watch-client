@@ -7,6 +7,7 @@ import {
 import AdminRoute from '../../../AdminRoute/AdminRoute';
 import AddWatch from '../AddWatch/AddWatch';
 import Allorders from '../Allorders/Allorders';
+import AllReview from '../AllReview/AllReview';
 import DashboardHome from '../DashboardHome/DashboardHome';
 import DashbordNavbar from '../DashbordNavbar/DashbordNavbar';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
@@ -45,7 +46,9 @@ const Dashboard = () => {
                 <AdminRoute path={`${path}/manageproducts`}>
                     <ManageProduct></ManageProduct>
                 </AdminRoute>
-
+                <AdminRoute path={`${path}/allReviews`}>
+                    <AllReview></AllReview>
+                </AdminRoute>
                 {/* <AdminRoute path={`${path}/manageproducts/update/:id`}>
                     <UpdateProduct></UpdateProduct>
                 </AdminRoute> */}

@@ -67,13 +67,14 @@ const useFirebase = () => {
 
     // Check user is Admin
     useEffect(() => {
-        fetch(`https://thawing-scrubland-20471.herokuapp.com/users/${user.email}`)
+        fetch(`https://thawing-scrubland-20471.herokuapp.com/users/${user?.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
+            .catch((e) => {
 
-    }, [user.email])
+            })
 
-
+    }, [user?.email])
 
 
 

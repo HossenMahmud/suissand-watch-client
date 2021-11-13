@@ -1,9 +1,16 @@
 import React from 'react';
+import useAuth from '../../../Hooks/useAuth';
+import Allorders from '../Allorders/Allorders';
+import MyOrder from '../MyOrder/MyOrder';
 
 const DashboardHome = () => {
+    const { admin } = useAuth();
     return (
         <div>
-            <h2>This is Dashboard Home</h2>
+            {
+                admin ? <Allorders></Allorders> :
+                    <MyOrder></MyOrder>
+            }
         </div>
     );
 };

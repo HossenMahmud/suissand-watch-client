@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useRouteMatch } from 'react-router-dom';
 import './ManageProduct.css';
 const ManageProduct = () => {
-    let { url } = useRouteMatch();
     const [products, setProducts] = useState([]);
     useEffect(() => {
         fetch('https://thawing-scrubland-20471.herokuapp.com/watches')
@@ -55,14 +53,32 @@ const ManageProduct = () => {
                                     <h3 className='text-start'><span style={{ color: '#D3A300' }}>$</span>{product.price}</h3>
                                     <div className='d-flex justify-content-between'>
                                         <button onClick={() => handleDelete(product._id)} className='btn btn-danger'>Delete</button>
-                                        <Link to={`${url}/update/${product._id}`}>
-                                            <button className='btn btn-info'>Update</button>
-                                        </Link>
+                                        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            Update
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>)
                     }
+                    {/* Update product model */}
+                    <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div className="modal-dialog">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h5 className="modal-title" id="exampleModalLabel">Update Product</h5>
+                                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div className="modal-body">
+                                    <h5 className='text-warning'>Product Update System Comming Soon</h5>
+                                </div>
+                                <div className="modal-footer">
+                                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" className="btn btn-primary">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
