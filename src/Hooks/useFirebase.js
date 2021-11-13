@@ -2,6 +2,8 @@ import { getAuth, createUserWithEmailAndPassword, updateProfile, signInWithEmail
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../Firebase/firebase.init";
 initializeAuthentication();
+
+
 const useFirebase = () => {
     const auth = getAuth();
     const [user, setUser] = useState({});
@@ -62,6 +64,19 @@ const useFirebase = () => {
         });
     }, [auth]);
 
+
+    // Check user is Admin
+    useEffect(() => {
+        fetch(`https://thawing-scrubland-20471.herokuapp.com/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+
+    }, [user.email])
+
+
+
+
+
     const logOUt = () => {
         signOut(auth).then(() => {
             // Sign-out successful.
@@ -70,9 +85,11 @@ const useFirebase = () => {
         })
     }
 
+
+    // save user into Database
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('http://localhost:5000/users', {
+        fetch('https://thawing-scrubland-20471.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -81,14 +98,6 @@ const useFirebase = () => {
         })
             .then()
     };
-
-    // Check user is Admin
-    useEffect(() => {
-        fetch(`http://localhost:5000/users/${user?.email}`)
-            .then(res => res.json())
-            .then(data => setAdmin(data.admin))
-
-    }, [user.email])
 
 
     return {

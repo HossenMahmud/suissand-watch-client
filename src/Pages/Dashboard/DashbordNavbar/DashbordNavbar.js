@@ -41,6 +41,9 @@ const DashbordNavbar = () => {
                                             <Link to={`${url}/addwatch`}>
                                                 AddWatch
                                             </Link>
+                                            <Link to={`${url}/manageproducts`}>
+                                                ManageProducts
+                                            </Link>
                                         </>
                                     ) : <>
                                         <Link to={`${url}/myOrder`}>

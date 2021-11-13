@@ -13,6 +13,7 @@ import Register from './Pages/Login/Register/Register';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
             </PrivateRoute>
             <Route path='/register'>
               <Register></Register>
+            </Route>
+            <Route path='*'>
+              <NotFound></NotFound>
             </Route>
           </Switch>
         </Router>

@@ -5,7 +5,7 @@ const MyOrder = () => {
     const { user } = useAuth();
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/order/${user?.email}`)
+        fetch(`https://thawing-scrubland-20471.herokuapp.com/order/${user?.email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [user?.email]);
@@ -14,7 +14,7 @@ const MyOrder = () => {
     const handleDelete = (id) => {
         let conform = window.confirm('Are You Sure Delete Item?');
         if (conform) {
-            fetch(`http://localhost:5000/deleteOrders/${id}`, {
+            fetch(`https://thawing-scrubland-20471.herokuapp.com/deleteOrders/${id}`, {
                 method: "DELETE",
                 headers: { "Content-type": "application/json" },
             })

@@ -4,7 +4,7 @@ import photo from '../../../images/avatar-1.svg';
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://thawing-scrubland-20471.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, []);
@@ -16,7 +16,7 @@ const Reviews = () => {
                 </div>
                 <div className="row">
                     {
-                        reviews.map(review => <div className="col-lg-6 col-md-12 col-sm-12 col-12 mb-4">
+                        reviews.map(review => <div key={review._id} className="col-lg-6 col-md-12 col-sm-12 col-12 mb-4">
                             <img src={photo} alt="" />
                             <h4 className='review-name mt-3'>{review.userName}</h4>
                             <p className='text-white'>{review.message}</p>

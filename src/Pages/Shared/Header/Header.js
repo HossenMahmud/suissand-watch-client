@@ -25,9 +25,11 @@ const Header = () => {
                             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                                 <Link to="/home" className="nav-link text-white">Home</Link>
                                 <Link to="/watches" className="nav-link text-white">Watches</Link>
-                                <Link to="/dashboard" className="nav-link text-white">Dashboard</Link>
                                 {
-                                    user?.email ? <button onClick={logOUt} className='logoutBtn'>Logout</button>
+                                    user?.email ? <>
+                                        <Link to="/dashboard" className="nav-link text-white">Dashboard</Link>
+                                        <button onClick={logOUt} className='logoutBtn'>Logout</button>
+                                    </>
                                         :
                                         <Link to="/login" className="nav-link text-white">Login</Link>
                                 }

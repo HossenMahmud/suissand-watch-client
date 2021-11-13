@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const Allorders = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://thawing-scrubland-20471.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, []);
@@ -12,7 +12,7 @@ const Allorders = () => {
     const handleDelete = (id) => {
         let conform = window.confirm('Are You Sure Delete Item?');
         if (conform) {
-            fetch(`http://localhost:5000/deleteOrders/${id}`, {
+            fetch(`https://thawing-scrubland-20471.herokuapp.com/deleteOrders/${id}`, {
                 method: "DELETE",
                 headers: { "Content-type": "application/json" },
             })

@@ -14,7 +14,7 @@ const AddWatch = () => {
         const watchData = {
             ...watch
         }
-        fetch("http://localhost:5000/addwatches", {
+        fetch("https://thawing-scrubland-20471.herokuapp.com/addwatches", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(watchData),
@@ -33,7 +33,7 @@ const AddWatch = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-6 mx-auto">
-                        <h2 className='text-white mb-3'>Add Watch</h2>
+                        <h2 className='mb-3'>Add Watch</h2>
                         <div className="review-form">
                             <form onSubmit={handleWatchSubmit}>
                                 <div className="mb-3">
@@ -48,7 +48,7 @@ const AddWatch = () => {
                                 <div className="mb-3">
                                     <input required onBlur={handleOnBlur} name="image" type="text" placeholder="Put Watch Image Link" className=" form-control" />
                                 </div>
-                                <button type="submit" className="btn btn-warning mb-3 fw-bold">Submit Review</button>
+                                <button type="submit" className="btn btn-warning mb-3 fw-bold">Add Watch</button>
                             </form>
                         </div>
                     </div>

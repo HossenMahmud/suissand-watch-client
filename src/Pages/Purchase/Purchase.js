@@ -11,10 +11,10 @@ const Purchase = () => {
     const [purchaseData, setPurchaseData] = useState({})
 
     useEffect(() => {
-        fetch('/watchFakeData.json')
+        fetch(`https://thawing-scrubland-20471.herokuapp.com/watch/${id}`)
             .then(res => res.json())
             .then(data => setData(data))
-    }, []);
+    }, [id]);
 
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -28,7 +28,7 @@ const Purchase = () => {
         const order = {
             ...purchaseData
         }
-        fetch("http://localhost:5000/orders", {
+        fetch("https://thawing-scrubland-20471.herokuapp.com/orders", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(order),
@@ -42,7 +42,7 @@ const Purchase = () => {
             });
         e.preventDefault();
     }
-    const purchaseWatch = data?.filter(td => td.id === parseInt(id));
+
 
     return (
         <>
@@ -52,14 +52,14 @@ const Purchase = () => {
                     <div className="row">
                         <div className="col-lg-4  col-12 col-sm-12 mb-4">
                             <div className="purchase-img">
-                                <img className='img-fluid' src={purchaseWatch[0]?.image} alt="" />
+                                <img className='img-fluid' src={data.image} alt="" />
                             </div>
                         </div>
                         <div className="col-lg-4 text-start  col-12 col-sm-12 mb-4">
                             <div className="purchase-info">
-                                <h2>{purchaseWatch[0]?.name}</h2>
-                                <p>{purchaseWatch[0]?.description}</p>
-                                <h3><span className='text-black'>Price:</span>${purchaseWatch[0]?.price}</h3>
+                                <h2>{data.model}</h2>
+                                <p>{data.description}</p>
+                                <h4><span className='text-black'>Price:</span>${data.price}</h4>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 col-12 col-sm-12 mb-4">
@@ -73,7 +73,7 @@ const Purchase = () => {
                                         <input required onBlur={handleOnBlur} name="email" defaultValue={user.email} type="email" className="form-control" />
                                     </div>
                                     <div className="mb-3">
-                                        <input required onBlur={handleOnBlur} name="watchName" defaultValue={purchaseWatch[0]?.name} type="text" className=" form-control" />
+                                        <input required onBlur={handleOnBlur} name="watchName" defaultValue={data.model} type="text" className=" form-control" />
                                     </div>
                                     <div className="mb-3">
                                         <input required onBlur={handleOnBlur} name="phone" type="phone" placeholder="Enter Phone" className=" form-control" />

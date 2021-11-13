@@ -17,7 +17,7 @@ const Review = () => {
         const reviewData = {
             ...review
         }
-        fetch("http://localhost:5000/reviews", {
+        fetch("https://thawing-scrubland-20471.herokuapp.com/reviews", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(reviewData),
@@ -36,7 +36,7 @@ const Review = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-lg-6 mx-auto">
-                        <h2 className='text-white mb-3'>Add Product Review</h2>
+                        <h2 className='mb-3'>Add Product Review</h2>
                         <div className="review-form">
                             <form onSubmit={handleReviewSubmit}>
                                 <div className="mb-3">
@@ -46,7 +46,7 @@ const Review = () => {
                                     <input required onBlur={handleOnBlur} defaultValue={user.email} name="email" type="email" className="form-control" />
                                 </div>
                                 <div className="mb-3">
-                                    <input required onBlur={handleOnBlur} name="rating" type="text" placeholder="Enter Rating Number (1-5)" className="form-control" />
+                                    <input required onBlur={handleOnBlur} name="rating" type="text" placeholder="Enter Rating Number (0-5)" className="form-control" />
                                 </div>
                                 <div className="mb-3">
                                     <textarea required onBlur={handleOnBlur} name="message" type="text" placeholder="Enter Review Message" className=" form-control" />

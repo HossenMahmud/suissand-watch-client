@@ -1,0 +1,11 @@
+.notfound h1{
+    font-size: 150px;
+    font-weight: bold;
+    color: #21AB64;
+}
+
+@media only screen and (max-width:767px) {
+    .notfound h1{
+        font-size:80px;
+    }
+}

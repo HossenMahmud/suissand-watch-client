@@ -10,9 +10,11 @@ import Allorders from '../Allorders/Allorders';
 import DashboardHome from '../DashboardHome/DashboardHome';
 import DashbordNavbar from '../DashbordNavbar/DashbordNavbar';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import ManageProduct from '../ManageProduct/ManageProduct';
 import MyOrder from '../MyOrder/MyOrder';
 import OrderPay from '../OrderPay/OrderPay';
 import Review from '../Review/Review';
+// import UpdateProduct from '../UpdateProduct/UpdateProduct';
 const Dashboard = () => {
     let { path } = useRouteMatch();
     return (
@@ -40,6 +42,13 @@ const Dashboard = () => {
                 <AdminRoute path={`${path}/addwatch`}>
                     <AddWatch></AddWatch>
                 </AdminRoute>
+                <AdminRoute path={`${path}/manageproducts`}>
+                    <ManageProduct></ManageProduct>
+                </AdminRoute>
+
+                {/* <AdminRoute path={`${path}/manageproducts/update/:id`}>
+                    <UpdateProduct></UpdateProduct>
+                </AdminRoute> */}
             </Switch>
         </>
     );
